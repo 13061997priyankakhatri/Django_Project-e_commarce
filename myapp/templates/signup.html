@@ -13,8 +13,6 @@
 		</h2>
 	</section>	
 
-<!-- Content page -->
-
   <!-- Content page -->
 <section class="bg0 p-t-104 p-b-116" >
     <div class="container" >
@@ -23,21 +21,27 @@
                 {% if msg %}
                 <div class="alert alert-success" role="alert">
                     {{msg}}
-                </div>    
+                  </div> 
+                  
                 {% elif msg1 %}
                 <div class="alert alert-danger" role="alert">
                     {{msg1}}
-                </div>    
+                  </div> 
                 {% endif %}
                 <form method="post" action="{% url 'signup' %}">
                     {% csrf_token %}
                     <h4 class="mtext-105 cl2 txt-center p-b-30">
                         Signup
                     </h4>
-
+                    <div class="bor8 m-b-20 how-pos4-parent">
+                        <select name="usertype">
+                            <option>-----Select User------</option>
+                            <option value="buyer" name="usertype">Buyer</option>
+                            <option value="seller" name="usertype">Seller</option>
+                        </select>
+                    </div>       
                     <div class="bor8 m-b-20 how-pos4-parent">
                         <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="email" name="email" placeholder="Enter Email">
-                        
                     </div>
 
                     <div class="bor8 m-b-20 how-pos4-parent">
@@ -60,12 +64,15 @@
                         <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="password" name="cpassword" placeholder="Enter Confirm Password">
                         
                     </div>
-
+                    
+                    
                     <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
-                        Login
+                        Signup
                     </button>
                 </form>
-            </div>  
+            </div>
+
+            
     </div>
-</section>   
+</section>    
 {% endblock %}
