@@ -201,7 +201,7 @@ def view(request):
 
 def pdetail(request,pk):
     product = Product.objects.get(pk=pk)
-    return render(request,"pdetail.html",{'product':product})
+    return render(request,"product-detail.html",{'product':product})
 
 def pedit(request,pk):
     product = Product.objects.get(pk=pk)
